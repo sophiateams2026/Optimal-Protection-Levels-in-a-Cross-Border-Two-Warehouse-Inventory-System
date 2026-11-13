@@ -4,16 +4,16 @@ Code for the manuscript *Held but Not Available: Optimal Protection Levels in a 
 
 The code does two things. It reproduces every table, figure and number in Section 6. It also lets you change any input in Table 1 and see the result, with each answer checked by independent computations.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sophiateams2026/held-but-not-available/blob/main/notebooks/reproduce_and_explore.ipynb)
-[![reproduce](https://github.com/sophiateams2026/held-but-not-available/actions/workflows/reproduce.yml/badge.svg)](https://github.com/sophiateams2026/held-but-not-available/actions/workflows/reproduce.yml)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sophiateams2026/Optimal-Protection-Levels-in-a-Cross-Border-Two-Warehouse-Inventory-System/blob/main/notebooks/reproduce_and_explore.ipynb)
+[![reproduce](https://github.com/sophiateams2026/Optimal-Protection-Levels-in-a-Cross-Border-Two-Warehouse-Inventory-System/actions/workflows/reproduce.yml/badge.svg)](https://github.com/sophiateams2026/Optimal-Protection-Levels-in-a-Cross-Border-Two-Warehouse-Inventory-System/actions/workflows/reproduce.yml)
 
 ## Quick start
 
 Python 3.9 or later. Only NumPy and Matplotlib are needed.
 
 ```bash
-git clone https://github.com/sophiateams2026/held-but-not-available.git
-cd REPO
+git clone https://github.com/sophiateams2026/Optimal-Protection-Levels-in-a-Cross-Border-Two-Warehouse-Inventory-System.git
+cd Optimal-Protection-Levels-in-a-Cross-Border-Two-Warehouse-Inventory-System
 pip install -r requirements.txt
 python reproduce_all.py          # about 20 seconds
 ```

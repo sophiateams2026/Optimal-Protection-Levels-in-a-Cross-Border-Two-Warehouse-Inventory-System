@@ -1,0 +1,11 @@
+Parameter,Value,Derivation
+"Q, d, T0","1000, 100/wk, 10 wk","Replenishment quantity, demand rate, cycle length"
+"QD = WD, QO","400, 600",Demand-side capacity binds; overflow stored on the origin side
+"v, P","50, 80",Landed unit cost (IAS 2) and selling price
+r,0.2%/wk,"Cost of capital, about 10.4% a year"
+"sD, sO (ds)","0.20, 0.08 (0.12)",Storage rates from warehouse cost pools
+ce,0.15,"Compliance, insurance, bonded fees 0.10; expected write-down delta*v = 0.001 x 50"
+cb,1.76,Capital rv = 0.10; deferred revenue rP = 0.16; contractual penalty 1.50
+kappa,5,"Expediting, handling and goodwill per unit backordered"
+p,0.20,lambda = 0.02 per week (one restriction every 50 weeks)
+L,3 wk,Restriction duration (deterministic in the baseline)

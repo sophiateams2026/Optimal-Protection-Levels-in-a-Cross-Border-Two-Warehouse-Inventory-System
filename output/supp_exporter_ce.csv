@@ -1,0 +1,5 @@
+Scenario,c_e,Delta h,R*,Premium,Stranded,Backlog,J*,J(DF),J(OF),vs DF %,vs OF %
+Importer baseline,0.150,0.120,268,192.96,23.33,20.26,236.55,297.00,304.20,20.4,22.2
+"Exporter, c_e unchanged (manuscript)",0.150,0.130,237,184.86,25.00,41.84,251.71,297.00,328.20,15.3,23.3
+"Exporter, write-down halved",0.125,0.130,232,180.96,21.06,45.50,247.52,290.70,325.50,14.9,24.0
+"Exporter, no write-down",0.100,0.130,227,177.06,17.03,49.20,243.29,284.40,322.80,14.5,24.6

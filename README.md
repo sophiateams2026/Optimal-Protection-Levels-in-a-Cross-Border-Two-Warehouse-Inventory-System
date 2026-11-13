@@ -44,7 +44,7 @@ For each parameter set the script prints:
 * a cost breakdown in the layout of Table 2;
 * a cross-check of the expected costs by three routes (below), with PASS or CHECK FAILED.
 
-It also saves the curve J(R) − J(0) to `output/explore/`. Values outside the model are rejected with a message (for example QD ≥ Q, or p > 1). Values that stretch an assumption trigger a note (for example p > 0.3, or L longer than the cycle).
+Values outside the model are rejected with a message (for example QD ≥ Q, or p > 1). Values that stretch an assumption trigger a note (for example p > 0.3, or L longer than the cycle).
 
 The Colab notebook has the same tool in an editable cell.
 

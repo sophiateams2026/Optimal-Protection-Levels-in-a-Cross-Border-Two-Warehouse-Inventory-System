@@ -20,7 +20,7 @@ Examples
   python explore.py --sweep L 0.5 8 31           # R* and costs over a grid of L
   python explore.py --sweep kappa 0 20 41 --set L=2
 
-Figures and CSV files go to output/explore/.
+Sweep tables and figures go to output/explore/.
 """
 from __future__ import annotations
 
@@ -182,7 +182,7 @@ def cross_check(prm: hbna.Params, reserves, n_onsets: int = 500, steps: int = 50
     return rows
 
 
-def analyse(prm: hbna.Params, extra_R=(), check: bool = True, plot: bool = True,
+def analyse(prm: hbna.Params, extra_R=(), check: bool = True,
             show: bool = False, quiet: bool = False) -> dict:
     """Solve the model for ``prm``, print a report and return the numbers."""
     warnings = validate(prm)
@@ -243,20 +243,6 @@ def analyse(prm: hbna.Params, extra_R=(), check: bool = True, plot: bool = True,
                   "(A vs B < 1e-6; C vs A < 0.1%, the simulation error is of order dt; "
                   "R* from Eq. (15) within one brute-force grid step)")
 
-    if plot:
-        OUT.mkdir(parents=True, exist_ok=True)
-        fig, ax = plt.subplots(figsize=(7, 4.3))
-        ax.plot(s["grid"], s["J"] - s["J"][0], color=BLUE, lw=1.6)
-        ax.axhline(0, color="grey", lw=0.8)
-        ax.axvline(s["Rstar_grid"], color=RED, ls=":", lw=1.2, label=f"R* = {s['Rstar_grid']:g}")
-        ax.set_xlabel("Reserve R")
-        ax.set_ylabel(r"$J(R) - J(0)$")
-        ax.set_xlim(0, prm.QD)
-        ax.set_title(f"p = {prm.p:.3g}, L = {prm.L:g}, $\\Delta h$ = {prm.dh:.3g}")
-        ax.legend()
-        f = finish(fig, "J_curve.png", OUT, show)
-        if not quiet:
-            print(f"\nFigure: {f}")
     return out
 
 

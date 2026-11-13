@@ -50,7 +50,7 @@ def test_theorem1_matches_bruteforce():
 
 def test_full_reproduction(tmp_path):
     import reproduce_all
-    assert reproduce_all.main(["--quick", "--outdir", str(tmp_path)]) == 0
+    assert reproduce_all.main(["--outdir", str(tmp_path)]) == 0
 
 
 # ---------------------------------------------------------------------------

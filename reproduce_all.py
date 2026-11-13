@@ -1,11 +1,9 @@
 """Reproduce every table, figure and number in Section 6 of the manuscript.
 
     python reproduce_all.py            # about 30 seconds on a laptop
-    python reproduce_all.py --quick    # skip the supplementary analysis
 
 Outputs (in ./output):
     table1.csv, table2.csv, fig1.png, fig2.png, fig3a.png, fig3b.png, fig4.png,
-    supp_exporter_ce.csv, supp_exporter_ce.png,
     results.json             every computed value,
     verification_report.md   reported vs computed values, PASS/FAIL per line.
 
@@ -34,7 +32,6 @@ import fig1_accessible_inventory  # noqa: E402
 import table2_fig2_expected_cost  # noqa: E402
 import fig3_sensitivity  # noqa: E402
 import fig4_regimes_exporter  # noqa: E402
-import supp_exporter_ce  # noqa: E402
 
 
 def fmt(x: float) -> str:
@@ -59,7 +56,6 @@ def check_internal(spec: dict, results: dict):
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
-    ap.add_argument("--quick", action="store_true", help="skip the supplementary analysis")
     ap.add_argument("--outdir", default=str(ROOT / "output"))
     args = ap.parse_args(argv)
     out = Path(args.outdir)
@@ -70,8 +66,6 @@ def main(argv=None) -> int:
              ("Table 2 and Fig. 2", table2_fig2_expected_cost.run),
              ("Fig. 3", fig3_sensitivity.run),
              ("Fig. 4 and exporter scenario", fig4_regimes_exporter.run)]
-    if not args.quick:
-        steps.append(("Supplementary: exporter c_e", supp_exporter_ce.run))
 
     results, t_all = {}, time.time()
     for name, fn in steps:

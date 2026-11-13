@@ -94,7 +94,6 @@ On top of this, the code checks the analytical results directly:
 | Table 2, Fig. 2, Section 6.3 | `scripts/table2_fig2_expected_cost.py` | `table2.csv`, `fig2.png` |
 | Fig. 3, Section 6.4 | `scripts/fig3_sensitivity.py` | `fig3a.png`, `fig3b.png` |
 | Fig. 4 and exporter scenario, Section 6.4 | `scripts/fig4_regimes_exporter.py` | `fig4.png` |
-| Supplementary: exporter with a smaller c_e (not in the manuscript) | `scripts/supp_exporter_ce.py` | `supp_exporter_ce.csv`, `.png` |
 
 Each script runs on its own, for example `python scripts/fig3_sensitivity.py`.
 

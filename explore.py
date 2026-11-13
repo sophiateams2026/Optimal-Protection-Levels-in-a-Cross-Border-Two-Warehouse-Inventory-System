@@ -37,7 +37,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import numpy as np  # noqa: E402
 
-from _common import BLUE, RED, finish, plt  # noqa: E402
+from _common import BLUE, finish, plt  # noqa: E402
 import hbna  # noqa: E402
 from hbna import model  # noqa: E402
 from hbna.simulation import expected_costs_sim  # noqa: E402
@@ -271,16 +271,10 @@ def sweep(prm: hbna.Params, name: str, lo: float, hi: float, n: int,
         for r in rows:
             print(f"{r[0]:9.4g} {r[1]:>8s} {r[2]:9.2f} {r[4]:9.2f} {r[5]:9.2f} {r[6]:9.2f} "
                   f"{r[7]:7.1f} {r[8]:7.1f}")
-    fig, ax = plt.subplots(1, 2, figsize=(10, 3.8))
-    ax[0].plot(xs, [r[2] for r in rows], color=BLUE, lw=1.6)
-    ax[0].set_xlabel(name)
-    ax[0].set_ylabel("Optimal reserve R*")
-    ax[1].plot(xs, [r[4] for r in rows], color=BLUE, lw=1.6, label="J(R*)")
-    ax[1].plot(xs, [r[5] for r in rows], "k--", lw=1.2, label="J(DF)")
-    ax[1].plot(xs, [r[6] for r in rows], color=RED, ls=":", lw=1.6, label="J(OF)")
-    ax[1].set_xlabel(name)
-    ax[1].set_ylabel("Expected relevant cost")
-    ax[1].legend()
+    fig, ax = plt.subplots(figsize=(6, 3.8))
+    ax.plot(xs, [r[2] for r in rows], color=BLUE, lw=1.6)
+    ax.set_xlabel(name)
+    ax.set_ylabel("Optimal reserve R*")
     f = finish(fig, f"sweep_{name}.png", OUT, show)
     if not quiet:
         print(f"\nTable: {OUT / f'sweep_{name}.csv'}\nFigure: {f}")

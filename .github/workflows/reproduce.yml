@@ -1,0 +1,25 @@
+name: reproduce
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -r requirements.txt
+      - run: python reproduce_all.py --outdir ci_output
+      - run: pytest -q
+      - uses: actions/upload-artifact@v4
+        with:
+          name: output-py${{ matrix.python-version }}
+          path: ci_output

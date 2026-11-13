@@ -1,0 +1,18 @@
+{
+  "_comment": "Table 1 baseline. Copy this file, edit the numbers, then run: python explore.py --config my_params.json . Optional shortcuts: p, ce, cb, dh set those values directly.",
+  "Q": 1000.0,
+  "d": 100.0,
+  "QD": 400.0,
+  "v": 50.0,
+  "dv": 0.0,
+  "P": 80.0,
+  "r": 0.002,
+  "sD": 0.2,
+  "sO": 0.08,
+  "compliance": 0.1,
+  "delta": 0.001,
+  "penalty": 1.5,
+  "kappa": 5.0,
+  "lam": 0.02,
+  "L": 3.0
+}

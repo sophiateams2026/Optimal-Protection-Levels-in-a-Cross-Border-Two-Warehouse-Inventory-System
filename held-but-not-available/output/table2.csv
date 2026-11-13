@@ -1,0 +1,8 @@
+Cost component,DF (R=0),"P(R*), R*=268",OF (R=400)
+Resilience premium pi R,0.00,192.96,288.00
+Stranded-inventory cost p ce E[ES],37.80,23.33,16.20
+Backlog-time cost p cb E[AB],79.20,1.06,0.00
+Per-unit backlog cost p kappa E[U],180.00,19.20,0.00
+Expected relevant cost J(R),297.00,236.55,304.20
+Memo: E[ES] (unit-weeks),1260.00,777.60,540.00
+Memo: E[U] (units),180.00,19.20,0.00
